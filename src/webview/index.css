@@ -31,3 +31,32 @@ body {
 .rdg-cell {
     color: var(--vscode-editor-foreground);
 }
+
+/* DOCX Viewer overrides */
+.docx p {
+    margin: 0;
+    /* Reset browser default, let Word styles (inline) take precedence */
+    padding: 0;
+}
+
+/* 
+   For paragraphs with background color (e.g. code blocks), remove margins to prevent white gaps.
+   Instead, add padding to extend the background color into the space that was previously margin.
+*/
+/* 
+   For paragraphs/elements with background color (e.g. code blocks), remove margins to prevent white gaps.
+   Instead, add padding to extend the background color into the space that was previously margin.
+*/
+.docx p[style*="background"],
+.docx div[style*="background"],
+.docx td[style*="background"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.docx table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

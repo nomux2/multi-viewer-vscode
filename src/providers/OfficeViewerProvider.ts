@@ -76,7 +76,7 @@ export class OfficeViewerProvider implements vscode.CustomReadonlyEditorProvider
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
-                <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}' 'unsafe-eval'; worker-src blob:;">
+                <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}' 'unsafe-eval'; worker-src blob:; img-src blob: data:; font-src data:;">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Office Viewer</title>
             </head>
