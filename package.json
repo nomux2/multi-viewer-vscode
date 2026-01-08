@@ -1,0 +1,146 @@
+{
+  "name": "multi-viewer",
+  "displayName": "Multi-Viewer",
+  "description": "Viewer for binary, logs, spreadsheets, and documents.",
+  "version": "0.0.1",
+  "publisher": "example-publisher",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "multiViewer.logViewer",
+        "displayName": "Log Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.log"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "multiViewer.spreadsheetViewer",
+        "displayName": "Spreadsheet Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.csv"
+          },
+          {
+            "filenamePattern": "*.tsv"
+          },
+          {
+            "filenamePattern": "*.xlsx"
+          },
+          {
+            "filenamePattern": "*.xls"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "multiViewer.pdfViewer",
+        "displayName": "PDF Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.pdf"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "multiViewer.officeViewer",
+        "displayName": "Office Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.docx"
+          },
+          {
+            "filenamePattern": "*.pptx"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "multiViewer.hexViewer",
+        "displayName": "Hex Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.bin"
+          },
+          {
+            "filenamePattern": "*.dat"
+          },
+          {
+            "filenamePattern": "*.exe"
+          },
+          {
+            "filenamePattern": "*.dll"
+          },
+          {
+            "filenamePattern": "*.so"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "multiViewer.sqliteViewer",
+        "displayName": "SQLite Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.sqlite"
+          },
+          {
+            "filenamePattern": "*.db"
+          },
+          {
+            "filenamePattern": "*.sqlite3"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "multi-viewer.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack --mode development && tsc -p ./",
+    "watch": "webpack --mode development --watch",
+    "package": "webpack --mode production && tsc -p ./",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/jszip": "^3.4.0",
+    "@types/node": "^25.0.3",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "@types/sql.js": "^1.4.9",
+    "@types/vscode": "^1.107.0",
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "docx-preview": "^0.3.7",
+    "jszip": "^3.10.1",
+    "pdfjs-dist": "^5.4.530",
+    "react": "^18.3.1",
+    "react-data-grid": "^7.0.0-beta.40",
+    "react-dom": "^18.3.1",
+    "sql.js": "^1.13.0",
+    "xlsx": "^0.18.5"
+  }
+}

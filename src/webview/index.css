@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--vscode-editor-background);
+    color: var(--vscode-editor-foreground);
+    font-family: var(--vscode-editor-font-family);
+    font-size: var(--vscode-editor-font-size);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fill-grid {
+    block-size: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.rdg {
+    border: none;
+    background-color: transparent;
+    color: var(--vscode-editor-foreground);
+    height: 100%;
+    --rdg-color: var(--vscode-editor-foreground);
+    --rdg-border-color: var(--vscode-editorWidget-border);
+    --rdg-summary-border-color: var(--vscode-editorWidget-border);
+    --rdg-background-color: var(--vscode-editor-background);
+    --rdg-header-background-color: var(--vscode-editor-background);
+    --rdg-row-hover-background-color: var(--vscode-list-hoverBackground);
+}
+
+.rdg-cell {
+    color: var(--vscode-editor-foreground);
+}
